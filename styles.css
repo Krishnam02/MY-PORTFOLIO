@@ -61,7 +61,7 @@ body {
   background: linear-gradient(90deg, rgba(74,0,224,0.6), rgba(164,255,175,0.6));
   border-radius: 15px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-  width: 80%; /* 80% of the viewport width */
+  width: 70%; /* 80% of the viewport width */
   max-width: 800px; /* Maximum width is 1200px */
   position: relative;
   overflow: hidden;
