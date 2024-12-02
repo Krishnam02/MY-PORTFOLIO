@@ -2,7 +2,6 @@
 body {
   margin: 0;
   padding: 0;
-  transform: scale(0.9); /* Scales to 90% */
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(45deg, #4A00E0 30%, #A4FFAF 70%);
   color: white;
@@ -17,14 +16,14 @@ body {
 
 /* Header */
 .header {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+  position: relative;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  padding: 0 20px;
+  padding: 20px;
+  width: calc(100% - 40px); /* Adjust for padding */
 }
 
 .name {
@@ -56,16 +55,16 @@ body {
 /* Hero Section */
 .hero {
   display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
   justify-content: space-between;
   align-items: center;
-  padding: 100px 50px;
-  background: linear-gradient(90deg, rgba(74,0,224,0.6), rgba(164,255,175,0.6));
+  padding: 50px 20px;
+  background: linear-gradient(90deg, rgba(74, 0, 224, 0.6), rgba(164, 255, 175, 0.6));
   border-radius: 15px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-  width: 80%;
+  width: 90%;
   max-width: 1200px;
-  position: relative;
-  overflow: hidden;
+  margin: 0 auto;
 }
 
 .hero-content {
@@ -73,14 +72,14 @@ body {
 }
 
 .hero-title {
-  font-size: 4rem;
+  font-size: clamp(2rem, 5vw, 4rem); /* Scales dynamically */
   color: #A4FFAF;
   margin-bottom: 10px;
   animation: fadeInUp 1s ease-out;
 }
 
 .hero-description {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem); /* Scales dynamically */
   color: #fff;
   opacity: 0.85;
   margin-bottom: 30px;
@@ -92,13 +91,14 @@ body {
 }
 
 .profile-image {
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  max-width: 300px;
+  height: auto; /* Maintain aspect ratio */
   border-radius: 10px;
   object-fit: cover;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   animation: fadeInRight 2s ease-out;
-  transition: transform 0.3s ease; /* Added zoom on hover */
+  transition: transform 0.3s ease;
 }
 
 .profile-image:hover {
@@ -143,6 +143,7 @@ body {
 
 .project-card {
   display: flex;
+  flex-wrap: wrap; /* Allows wrapping */
   gap: 30px;
   margin-bottom: 40px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -156,8 +157,9 @@ body {
 }
 
 .project-img {
-  width: 250px;
-  height: 250px;
+  width: 100%;
+  max-width: 250px; /* Ensures it scales down */
+  height: auto; /* Maintain aspect ratio */
   object-fit: cover;
   border-radius: 10px;
   transition: transform 0.3s ease;
@@ -203,7 +205,6 @@ body {
   margin-top: 50px;
 }
 
-
 /* Animations */
 
 /* Fade In */
@@ -221,10 +222,10 @@ body {
 /* Image Zoom on Hover */
 @keyframes scaleUp {
   0% {
-    transform: scale(0.9);
+    transform: scale(1);
   }
   100% {
-    transform: scale(0.9);
+    transform: scale(1.1);
   }
 }
 
@@ -242,3 +243,28 @@ body {
   animation: flipCard 1s ease-in-out;
 }
 
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .projects {
+    padding: 20px;
+  }
+
+  .project-card {
+    flex-direction: column;
+    align-items: center;
+  }
+}
