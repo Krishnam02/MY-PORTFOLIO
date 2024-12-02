@@ -14,6 +14,14 @@ body {
   box-sizing: border-box;
 }
 
+/* Add Viewport Meta Tag for proper scaling in the HTML head */
+@media screen and (max-width: 100%) {
+  /* This will ensure the page scales and does not overflow horizontally */
+  html, body {
+    overflow-x: hidden;
+  }
+}
+
 /* Header */
 .header {
   position: absolute;
@@ -97,7 +105,7 @@ body {
   object-fit: cover;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   animation: fadeInRight 2s ease-out;
-  transition: transform 0.3s ease; /* Added zoom on hover */
+  transition: transform 0.3s ease;
 }
 
 .profile-image:hover {
@@ -202,7 +210,6 @@ body {
   margin-top: 50px;
 }
 
-
 /* Animations */
 
 /* Fade In */
@@ -241,3 +248,60 @@ body {
   animation: flipCard 1s ease-in-out;
 }
 
+/* Prevent horizontal overflow */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .hero {
+    padding: 80px 30px;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+  }
+  
+  .profile-image {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .about .section-title {
+    font-size: 2rem;
+  }
+  
+  .projects .project-card {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .project-card:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .project-card {
+    width: 100%;
+  }
+}
