@@ -13,9 +13,13 @@ body {
   color: white;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Changed to 'flex-start' to ensure content stays within the screen */
-  min-height: 100vh; /* Allow the body to grow naturally */
+  align-items: flex-start;
+  min-height: 100vh;
   overflow-x: hidden; /* Prevent horizontal overflow */
+  transform: scale(0.9); /* Scale the whole page by 90% */
+  transform-origin: top left; /* Make sure it scales from the top left */
+  width: 100%;
+  height: auto;
 }
 
 /* Header */
@@ -66,7 +70,7 @@ body {
   background: linear-gradient(90deg, rgba(74,0,224,0.6), rgba(164,255,175,0.6));
   border-radius: 15px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-  width: 100%; /* Set width to 100% to allow fluid scaling */
+  width: 100%; /* Full width */
   max-width: 1200px;
   position: relative;
   overflow: hidden;
