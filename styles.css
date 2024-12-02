@@ -16,10 +16,17 @@ body {
   align-items: flex-start;
   min-height: 100vh;
   overflow-x: hidden; /* Prevent horizontal overflow */
-  transform: scale(0.9); /* Scale the whole page by 90% */
-  transform-origin: top left; /* Make sure it scales from the top left */
-  width: 100%;
   height: auto;
+}
+
+/* Container Wrapper (Scaling this element to maintain layout) */
+.wrapper {
+  width: 100%;
+  max-width: 1200px; /* Max width if needed */
+  transform: scale(0.9); /* Scale the content by 90% */
+  transform-origin: top left; /* Scale from the top-left corner */
+  margin-top: 0; /* Reset any top margin that could cause alignment shifts */
+  position: relative;
 }
 
 /* Header */
@@ -71,7 +78,6 @@ body {
   border-radius: 15px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
   width: 100%; /* Full width */
-  max-width: 1200px;
   position: relative;
   overflow: hidden;
 }
