@@ -8,9 +8,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  flex-direction: column;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
   box-sizing: border-box;
 }
 
@@ -23,7 +24,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  width: calc(100% - 40px); /* Adjust for padding */
+  width: calc(100% - 40px);
 }
 
 .name {
@@ -55,7 +56,7 @@ body {
 /* Hero Section */
 .hero {
   display: flex;
-  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 50px 20px;
@@ -64,7 +65,7 @@ body {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
   width: 90%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 60px; /* Adds space below hero section */
 }
 
 .hero-content {
@@ -72,14 +73,14 @@ body {
 }
 
 .hero-title {
-  font-size: clamp(2rem, 5vw, 4rem); /* Scales dynamically */
+  font-size: clamp(2rem, 5vw, 4rem);
   color: #A4FFAF;
   margin-bottom: 10px;
   animation: fadeInUp 1s ease-out;
 }
 
 .hero-description {
-  font-size: clamp(1rem, 2.5vw, 1.2rem); /* Scales dynamically */
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   color: #fff;
   opacity: 0.85;
   margin-bottom: 30px;
@@ -93,7 +94,7 @@ body {
 .profile-image {
   width: 100%;
   max-width: 300px;
-  height: auto; /* Maintain aspect ratio */
+  height: auto;
   border-radius: 10px;
   object-fit: cover;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -112,7 +113,8 @@ body {
   color: #333;
   border-radius: 8px;
   padding: 50px 20px;
-  margin-top: 50px;
+  margin: 0 auto 50px; /* Adds space above and below */
+  max-width: 800px;
   animation: fadeInUp 2s ease-out;
 }
 
@@ -135,15 +137,16 @@ body {
 .projects {
   background: #fff;
   padding: 50px 20px;
-  margin-top: 50px;
+  margin: 0 auto 50px;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   animation: fadeInUp 2s ease-out;
+  max-width: 1200px;
 }
 
 .project-card {
   display: flex;
-  flex-wrap: wrap; /* Allows wrapping */
+  flex-wrap: wrap;
   gap: 30px;
   margin-bottom: 40px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -158,8 +161,8 @@ body {
 
 .project-img {
   width: 100%;
-  max-width: 250px; /* Ensures it scales down */
-  height: auto; /* Maintain aspect ratio */
+  max-width: 250px;
+  height: auto;
   object-fit: cover;
   border-radius: 10px;
   transition: transform 0.3s ease;
@@ -202,7 +205,8 @@ body {
   color: #333;
   border-radius: 8px;
   padding: 50px 20px;
-  margin-top: 50px;
+  margin: 0 auto 50px;
+  max-width: 800px;
 }
 
 /* Animations */
