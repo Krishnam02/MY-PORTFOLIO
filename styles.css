@@ -209,13 +209,15 @@ body {
   max-width: 800px;
 }
 
-a {
-  text-decoration: none; /* Removes underline or stray text */
-}
+/* Fix for Icon Alignment in Contact Section */
 a img {
   vertical-align: middle; /* Aligns icons correctly */
+  display: inline-block; /* Prevent stray lines */
 }
-
+a {
+  text-decoration: none;
+  margin: 0;
+}
 
 /* Animations */
 
