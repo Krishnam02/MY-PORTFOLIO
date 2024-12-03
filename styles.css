@@ -209,6 +209,14 @@ body {
   max-width: 800px;
 }
 
+a {
+  text-decoration: none; /* Removes underline or stray text */
+}
+a img {
+  vertical-align: middle; /* Aligns icons correctly */
+}
+
+
 /* Animations */
 
 /* Fade In */
